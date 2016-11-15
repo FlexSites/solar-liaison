@@ -7,6 +7,7 @@ const {
 } = require('graphql')
 
 const Measurement = require('./Measurement').default
+const Progress = require('./Progress').default
 
 const Address = new GraphQLObjectType({
   name: 'Address',
@@ -34,15 +35,10 @@ const System = new GraphQLObjectType({
   name: 'SolarSystem',
   description: 'Solar Panel System',
   fields: () => ({
-    address: {
-      type: new GraphQLNonNull(Address),
-    },
-    production: {
-      type: new GraphQLList(Measurement),
-    },
-    consumption: {
-      type: new GraphQLList(Measurement),
-    },
+    address: { type: new GraphQLNonNull(Address) },
+    progress: { type: new GraphQLList(Progress) },
+    production: { type: new GraphQLList(Measurement) },
+    consumption: { type: new GraphQLList(Measurement) },
   }),
 })
 

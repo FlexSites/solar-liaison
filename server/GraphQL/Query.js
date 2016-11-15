@@ -37,6 +37,7 @@ const Query = new GraphQLObjectType({
         return [
           {
             address: require('../mocks/address').default,
+            progress: require('../mocks/progress').default(),
             production: require('../mocks/measurements').default(),
             consumption: require('../mocks/measurements').default(),
           },
