@@ -1,0 +1,32 @@
+{
+  "name": "solar-liaison-server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "local": "node-dev index.js",
+    "lint": "eslint .",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.14.0",
+    "express-graphql": "^0.6.1",
+    "graphql": "^0.8.1"
+  },
+  "engines": {
+    "node": "6.6.x",
+    "npm": "3.10.x"
+  },
+  "devDependencies": {
+    "eslint": "^3.10.1",
+    "eslint-config-standard": "^6.2.1",
+    "eslint-plugin-node": "^3.0.3",
+    "eslint-plugin-promise": "^3.3.2",
+    "eslint-plugin-standard": "^2.0.1",
+    "node-dev": "^3.1.3"
+  }
+}
