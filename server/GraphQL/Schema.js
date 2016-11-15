@@ -1,7 +1,5 @@
 
-const GraphQL = require('graphql')
-const GraphQLSchema = GraphQL.GraphQLSchema
-
+const { GraphQLSchema } = require('graphql')
 
 const Query = require('./Query').default
 

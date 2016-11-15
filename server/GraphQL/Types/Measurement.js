@@ -1,9 +1,10 @@
 
-const GraphQL = require('graphql')
-const GraphQLObjectType = GraphQL.GraphQLObjectType
-const GraphQLNonNull = GraphQL.GraphQLNonNull
-const GraphQLString = GraphQL.GraphQLString
-const GraphQLFloat = GraphQL.GraphQLFloat
+const {
+  GraphQLObjectType,
+  GraphQLNonNull,
+  GraphQLString,
+  GraphQLFloat,
+} = require('graphql')
 
 
 const Measurement = new GraphQLObjectType({

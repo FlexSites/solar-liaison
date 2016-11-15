@@ -9,22 +9,7 @@ const schema = require('./GraphQL/Schema').default
 
 
 app.use('/', (req, res, next) => {
-  req.user = {
-    id: 'boop boop',
-    provider: 'stormpath',
-    providerId: 'fixme',
-    profile: {
-      name: 'Dan Crews',
-      givenName: 'Dan',
-      familyName: 'Crews',
-      email: 'dan.crews@vivintsolar.com',
-      badgeId: '105425',
-    },
-    groups: [
-      'SolarDev',
-    ],
-  }
-
+  req.user = require('./mocks/user').default
   next()
 })
 

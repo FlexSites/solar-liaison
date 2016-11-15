@@ -1,10 +1,12 @@
 
-const GraphQL = require('graphql')
-const GraphQLID = GraphQL.GraphQLID
-const GraphQLList = GraphQL.GraphQLList
-const GraphQLNonNull = GraphQL.GraphQLNonNull
-const GraphQLObjectType = GraphQL.GraphQLObjectType
-const GraphQLString = GraphQL.GraphQLString
+
+const {
+  GraphQLID,
+  GraphQLList,
+  GraphQLNonNull,
+  GraphQLObjectType,
+  GraphQLString,
+} = require('graphql')
 
 const UserProfile = new GraphQLObjectType({
   name: 'UserProfile',

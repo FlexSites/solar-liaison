@@ -1,11 +1,13 @@
 
-const GraphQL = require('graphql')
-const GraphQLObjectType = GraphQL.GraphQLObjectType
-const GraphQLList = GraphQL.GraphQLList
-const GraphQLString = GraphQL.GraphQLString
+const {
+  GraphQLObjectType,
+  GraphQLList,
+  GraphQLString,
+} = require('graphql')
 
 const User = require('./Types/User').default
 const System = require('./Types/System').default
+const Contact = require('./Types/Contact').default
 
 const Query = new GraphQLObjectType({
   name: 'LiaisonSchema',
@@ -15,6 +17,12 @@ const Query = new GraphQLObjectType({
       type: User,
       resolve: (source, args, context, info) => {
         return context.user
+      },
+    },
+    contact: {
+      type: Contact,
+      resolve: (source, args, context, info) => {
+        return require('../mocks/contact').default
       },
     },
     systems: {
@@ -28,46 +36,9 @@ const Query = new GraphQLObjectType({
       resolve: (source, args, context, info) => {
         return [
           {
-            address: {
-              street: '1234 Poker st',
-              city: 'Orem',
-              state: 'UT',
-              zip: '84058',
-            },
-            production: [
-              {
-                unit: 'kW',
-                value: 1234.634,
-                created: new Date().toISOString(),
-              },
-              {
-                unit: 'kW',
-                value: 1234.634,
-                created: new Date().toISOString(),
-              },
-            ],
-            consumption: [
-              {
-                unit: 'kW',
-                value: 234.634,
-                created: new Date().toISOString(),
-              },
-              {
-                unit: 'kW',
-                value: 234.634,
-                created: new Date().toISOString(),
-              },
-              {
-                unit: 'kW',
-                value: 234.634,
-                created: new Date().toISOString(),
-              },
-              {
-                unit: 'kW',
-                value: 234.634,
-                created: new Date().toISOString(),
-              },
-            ],
+            address: require('../mocks/address').default,
+            production: require('../mocks/measurements').default(),
+            consumption: require('../mocks/measurements').default(),
           },
         ]
       },
