@@ -6,6 +6,6 @@ exports.default = {
   phone: casual.phone,
   email: casual.email,
   title: casual.title,
-  photo: 'http://lorempixel.com/400/200/',
+  photo: 'http://lorempixel.com/400/400/',
   textable: casual.boolean,
 }
