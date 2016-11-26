@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
-    "local": "node-dev index.js",
+    "local": "nodemon index.js",
     "lint": "eslint .",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -13,22 +13,24 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "config": "^1.24.0",
+    "elasticsearch": "^12.1.0",
     "express": "^4.14.0",
     "express-graphql": "^0.6.1",
     "graphql": "^0.8.1"
   },
   "engines": {
+    "casual": "^1.5.8",
+    "moment": "^2.16.0",
     "node": "6.6.x",
     "npm": "3.10.x"
   },
   "devDependencies": {
-    "casual": "^1.5.8",
     "eslint": "^3.10.1",
     "eslint-config-standard": "^6.2.1",
     "eslint-plugin-node": "^3.0.3",
     "eslint-plugin-promise": "^3.3.2",
     "eslint-plugin-standard": "^2.0.1",
-    "moment": "^2.16.0",
-    "node-dev": "^3.1.3"
+    "nodemon": "^1.11.0"
   }
 }

@@ -14,18 +14,26 @@ const Address = new GraphQLObjectType({
   fields: () => ({
     street: {
       type: new GraphQLNonNull(GraphQLString),
+      resolve: (source) => {
+        console.info('source', source)
+        return source.address_1
+      },
     },
     street2: {
       type: GraphQLString,
+      resolve: source => source.address_2,
     },
     city: {
       type: new GraphQLNonNull(GraphQLString),
+      resolve: source => source.city,
     },
     state: {
       type: new GraphQLNonNull(GraphQLString),
+      resolve: source => source.state,
     },
     zip: {
       type: new GraphQLNonNull(GraphQLString),
+      resolve: source => source.postal_code,
     },
   }),
 })
