@@ -1,12 +1,11 @@
 
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Content, Text, List, ListItem } from 'native-base';
+import { Content, Text, List, ListItem, Icon } from 'native-base';
 import { actions } from 'react-native-navigation-redux-helpers';
 import { setIndex } from '../../actions/list';
 import navigateTo from '../../actions/sideBarNav';
 import myTheme from '../../themes/base-theme';
-import { Icon, InputGroup, Input } from 'native-base';
 import { closeDrawer } from '../../actions/drawer';
 
 import styles from './style';
@@ -36,17 +35,14 @@ class SideBar extends Component {
       <Content theme={myTheme} style={styles.sidebar} >
         <List>
           <ListItem button onPress={() => this.navigateTo('home')} >
-            <Text style={{color: '#FFF'}}>Home</Text>
+            <Text style={{ color: '#FFF' }}>Home</Text>
           </ListItem>
           <ListItem button onPress={() => this.navigateTo('production')} >
-            <Text>System Production</Text>
-          </ListItem>
-          <ListItem button onPress={() => this.navigateTo('blankPage')} >
-            <Text style={{color: '#FFF'}}>Blank Page</Text>
+            <Text style={{ color: '#FFF' }}>System Production</Text>
           </ListItem>
           <ListItem button onPress={() => this.props.reset(this.props.navigation.key)}>
-            <Text style={{alignSelf: 'center', marginRight: 15, color: '#FFF'}}>Logout</Text>
-            <Icon name="ios-log-out" style={{color: '#FFF', fontSize: 20}} />
+            <Text style={{ alignSelf: 'center', marginRight: 15, color: '#FFF' }}>Logout</Text>
+            <Icon name="ios-log-out" style={{ color: '#FFF', fontSize: 20 }} />
           </ListItem>
         </List>
       </Content>

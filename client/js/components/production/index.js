@@ -1,19 +1,15 @@
-
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import {Text as ReactText}  from 'react-native'
-import Svg,{ G, Path, Text} from 'react-native-svg'
+import { Text as ReactText, Dimensions, View } from 'react-native';
 import { actions } from 'react-native-navigation-redux-helpers';
-import { Container, Header, Title, Content, Button, Icon } from 'native-base';
-// import { Pie } from 'react-native-pathjs-charts'
-
-import { Dimensions } from 'react-native'
-
-var {height, width} = Dimensions.get('window');
-
+import { Container, Header, Title, Content, Button, Icon, Tabs } from 'native-base';
 import { openDrawer } from '../../actions/drawer';
 import styles from './styles';
-import Pie from '../Pie'
+import Pie from '../Pie';
+import myTheme from '../../themes/base-theme';
+
+const { width } = Dimensions.get('window');
+
 
 const {
   popRoute,
@@ -22,14 +18,14 @@ const {
 const sample = {
   production: [{
     name: 'Today',
-    kW: 5
+    kW: 5,
   }, {
     name: 'Average',
     kW: 2,
   }],
   consumption: [{
     name: 'Today',
-    kW: 7
+    kW: 7,
   }, {
     name: 'Average',
     kW: 1,
@@ -39,7 +35,7 @@ const sample = {
       top: 0,
       left: 0,
       right: 0,
-      bottom: 0
+      bottom: 0,
     },
     color: '#FD8224',
     r: width / 4,
@@ -48,18 +44,58 @@ const sample = {
     animate: {
       type: 'oneByOne',
       duration: 200,
-      fillTransition: 3
+      fillTransition: 3,
     },
     label: {
       fontFamily: 'Arial',
       fontSize: 14,
       fontWeight: true,
-      color: '#ECF0F1'
-    }
-  }
-}
+      color: '#ECF0F1',
+    },
+  },
+};
 
-class BlankPage extends Component {
+const sampleWeek = {
+  production: [{
+    name: 'Today',
+    kW: 38,
+  }, {
+    name: 'Average',
+    kW: 4,
+  }],
+  consumption: [{
+    name: 'Today',
+    kW: 48,
+  }, {
+    name: 'Average',
+    kW: 3,
+  }],
+  options: {
+    margin: {
+      top: 0,
+      left: 0,
+      right: 0,
+      bottom: 0,
+    },
+    color: '#FD8224',
+    r: width / 4,
+    R: width / 3,
+    legendPosition: 'topLeft',
+    animate: {
+      type: 'oneByOne',
+      duration: 200,
+      fillTransition: 3,
+    },
+    label: {
+      fontFamily: 'Arial',
+      fontSize: 14,
+      fontWeight: true,
+      color: '#ECF0F1',
+    },
+  },
+};
+
+class ProductionPage extends Component {
 
   static propTypes = {
     name: React.PropTypes.string,
@@ -93,18 +129,35 @@ class BlankPage extends Component {
           </Button>
         </Header>
 
-        <Content style={{ padding: 20 }}>
-          <Pie
-            percentage={sample.percentage}
-            production={sample.production}
-            consumption={sample.consumption}
-            options={sample.options}
-            accessorKey="kW"
-            width={300}
-            height={300}
-            style={{ alignSelf: 'center' }}
-          />
-          <ReactText style={{ textAlign: 'center', marginTop: 15, fontWeight: '500', fontSize: 18 }}>Production</ReactText>
+        <Content style={{ padding: 10 }} theme={myTheme} >
+          <Tabs>
+            <Content tabLabel="Today" style={{ paddingTop: 10 }}>
+              <Pie
+                percentage={sample.percentage}
+                production={sample.production}
+                consumption={sample.consumption}
+                options={sample.options}
+                accessorKey="kW"
+                width={300}
+                height={300}
+                style={{ alignSelf: 'center' }}
+              />
+              <ReactText style={{ textAlign: 'center', marginTop: 15, fontWeight: '500', fontSize: 18 }}>Production</ReactText>
+            </Content>
+            <Content tabLabel="This Week" style={{ paddingTop: 10 }}>
+              <Pie
+                percentage={sampleWeek.percentage}
+                production={sampleWeek.production}
+                consumption={sampleWeek.consumption}
+                options={sampleWeek.options}
+                accessorKey="kW"
+                width={300}
+                height={300}
+                style={{ alignSelf: 'center' }}
+              />
+              <ReactText style={{ textAlign: 'center', marginTop: 15, fontWeight: '500', fontSize: 18 }}>Production</ReactText>
+            </Content>
+          </Tabs>
         </Content>
       </Container>
     );
@@ -126,4 +179,4 @@ const mapStateToProps = state => ({
 });
 
 
-export default connect(mapStateToProps, bindAction)(BlankPage);
+export default connect(mapStateToProps, bindAction)(ProductionPage);

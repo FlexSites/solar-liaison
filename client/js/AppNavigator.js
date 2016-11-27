@@ -81,8 +81,6 @@ class AppNavigator extends Component {
         return <Login />;
       case 'home':
         return <Summary />;
-      case 'blankPage':
-        return <BlankPage />;
       case 'production':
         return <Production />;
       default :
