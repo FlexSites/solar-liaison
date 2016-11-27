@@ -37,6 +37,13 @@ class Summary extends Component {
     }),
   }
 
+  constructor(props) {
+    super(props);
+    this.state = {
+      ptoed: false,
+    };
+  }
+
   getStatusSummary() {
     // This will be smater and look at the status from the logged in User
     return (
@@ -101,13 +108,19 @@ class Summary extends Component {
   }
 
   openPhone() {
-    const number = this.props.ptoed ? '1-877-404-4129' : this.props.repNumber;
+    const number = this.state.ptoed ? '1-877-404-4129' : this.props.repNumber;
     phoneCall(number, true);
   }
 
   openEmail() {
-    const contactEmail = this.props.ptoed ? 'customer.service@vivintsolar.com' : this.props.repEmail;
+    const contactEmail = this.state.ptoed ? 'customer.service@vivintsolar.com' : this.props.repEmail;
     email([contactEmail], null, null, null, null);
+  }
+
+  switchView() {
+    this.setState({
+      ptoed: !this.state.ptoed,
+    });
   }
 
   pushRoute(route, index) {
@@ -116,10 +129,10 @@ class Summary extends Component {
   }
 
   render() {
-    const name = this.props.ptoed ? 'Customer Service' : this.props.repName;
-    const firstName = this.props.ptoed ? 'Customer Service' : this.props.repName.split(' ')[0];
-    const number = this.props.ptoed ? '1-877-404-4129' : this.props.repNumber;
-    const imageURI = this.props.ptoed ? 'https://scontent.cdninstagram.com/t51.2885-19/s320x320/13721137_582908658580658_976291962_a.jpg' : 'https://stanlemmens.nl/wp/wp-content/uploads/2014/07/bill-gates-wealthiest-person.jpg'; //`https://46nsgon4l7.execute-api.us-west-2.amazonaws.com/prod/tms/workday-photo/${this.props.repId}`;
+    const name = this.state.ptoed ? 'Customer Service' : this.props.repName;
+    const firstName = this.state.ptoed ? 'Customer Service' : this.props.repName.split(' ')[0];
+    const number = this.state.ptoed ? '1-877-404-4129' : this.props.repNumber;
+    const imageURI = this.state.ptoed ? 'https://scontent.cdninstagram.com/t51.2885-19/s320x320/13721137_582908658580658_976291962_a.jpg' : 'https://stanlemmens.nl/wp/wp-content/uploads/2014/07/bill-gates-wealthiest-person.jpg'; //`https://46nsgon4l7.execute-api.us-west-2.amazonaws.com/prod/tms/workday-photo/${this.props.repId}`;
     const buttons = (
       <View>
         <Button style={{ marginBottom: 5 }} onPress={() => this.openPhone()}>
@@ -131,7 +144,7 @@ class Summary extends Component {
       </View>
     );
 
-    const summaryList = this.props.ptoed ? this.getUsageSummary() : this.getStatusSummary();
+    const summaryList = this.state.ptoed ? this.getUsageSummary() : this.getStatusSummary();
 
     return (
       <Container theme={myTheme} style={styles.container}>
@@ -162,6 +175,11 @@ class Summary extends Component {
               {buttons}
             </ListItem>
           </List>
+          <Button transparent onPress={() => this.switchView()} >
+            <Text>
+              {/*Temporary hidden button to swap between views*/}
+            </Text>
+          </Button>
         </Content>
       </Container>
     );
