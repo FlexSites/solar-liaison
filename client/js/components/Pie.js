@@ -10,70 +10,70 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and limitations under the License.
 */
 
-import React, {Component} from 'react'
-import {Text as ReactText}  from 'react-native'
-import Svg,{ G, Rect, Path, Text} from 'react-native-svg'
-import { identity } from 'react-native-pathjs-charts/src/util'
-const Pie = require('paths-js/pie')
-import { Dimensions } from 'react-native'
+import React, { Component } from 'react';
+import { Text as ReactText }  from 'react-native';
+import Svg, { G, Rect, Path, Text } from 'react-native-svg';
+import { identity } from 'react-native-pathjs-charts/src/util';
 
-const dim = 320
+const pie = require('paths-js/pie');
 
-var {height, width} = Dimensions.get('window');
+const dim = 320;
+
 
 export default class PieChart extends Component {
+
   render() {
-    const noDataMsg = this.props.noDataMessage || 'No data available'
-    if (this.props.production === undefined) return (<ReactText>{noDataMsg}</ReactText>)
+    const noDataMsg = this.props.noDataMessage || 'No data available';
+    if (this.props.production === undefined) return (<ReactText>{noDataMsg}</ReactText>);
 
-    const radius = dim / 2
+    const radius = dim / 2;
 
-    const production = Pie({
-      center: [0,0],
+    const production = pie({
+      center: [0, 0],
       r: 120,
       R: radius,
       data: this.props.production,
-      accessor: this.props.accessor || identity(this.props.accessorKey)
-    })
+      accessor: this.props.accessor || identity(this.props.accessorKey),
+    });
 
-    const consumption = Pie({
-      center: [0,0],
+    const consumption = pie({
+      center: [0, 0],
       r: 75,
       R: 115,
       data: this.props.consumption,
-      accessor: this.props.accessor || identity(this.props.accessorKey)
-    })
+      accessor: this.props.accessor || identity(this.props.accessorKey),
+    });
 
-    const currentConsumption = this.props.consumption.filter((c => c.name === 'Today'))[0]
-    const currentProduction = this.props.production.filter((c => c.name === 'Today'))[0]
+    const currentConsumption = this.props.consumption.filter((c => c.name === 'Today'))[0];
+    const currentProduction = this.props.production.filter((c => c.name === 'Today'))[0];
 
     const slices = [
       (
         <G key={0} x={radius} y={radius}>
-          <Path d={consumption.curves[0].sector.path.print()} fill={'#25C7CF'} fillOpacity={1}  />
+          <Path d={consumption.curves[0].sector.path.print()} fill={'#25C7CF'} fillOpacity={1} />
         </G>
       ),
       (
         <G key={1} x={radius} y={radius}>
-          <Path d={consumption.curves[1].sector.path.print()} fill={'#efefef'} fillOpacity={1}  />
+          <Path d={consumption.curves[1].sector.path.print()} fill={'#efefef'} fillOpacity={1} />
         </G>
-      )
-    ]
+      ),
+    ];
     const productionSlices = [
       (
         <G key={0} x={radius} y={radius}>
-          <Path d={production.curves[0].sector.path.print()} fill={'#FD8224'} fillOpacity={1}  />
+          <Path d={production.curves[0].sector.path.print()} fill={'#FD8224'} fillOpacity={1} />
         </G>
       ),
       (
         <G key={1} x={radius} y={radius}>
-          <Path d={production.curves[1].sector.path.print()} fill={'#efefef'} fillOpacity={1}  />
+          <Path d={production.curves[1].sector.path.print()} fill={'#efefef'} fillOpacity={1} />
         </G>
       ),
-    ]
+    ];
 
-    const barWidth = dim / 4
-    const barHeight = 5
+    const barWidth = dim / 4;
+    const barHeight = 5;
 
     return (
       <Svg style={this.props.style} width={this.props.width} height={this.props.height} viewBox={`0 0 ${dim} ${dim}`}>

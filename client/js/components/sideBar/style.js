@@ -10,6 +10,5 @@ module.exports = StyleSheet.create({
     paddingRight: 0,
     paddingTop: 30,
     backgroundColor: '#FF8200',
-    color: '#FFF'
   },
 });

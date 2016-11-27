@@ -4,16 +4,16 @@ import { Image, StatusBar, Text } from 'react-native';
 import { connect } from 'react-redux';
 import { actions } from 'react-native-navigation-redux-helpers';
 import { Container, Content, InputGroup, Input, Button, Icon, View } from 'native-base';
-import { Col, Row, Grid } from "react-native-easy-grid";
+import Video from 'react-native-video';
 
 import { setUser } from '../../actions/user';
 import styles from './styles';
 
-import Video from 'react-native-video';
-
 const {
   replaceAt,
 } = actions;
+
+const videoSrc = require('../../../images/video.mp4');
 
 const background = require('../../../images/login1.png');
 
@@ -34,63 +34,50 @@ class Login extends Component {
     };
   }
 
-
-
   replaceRoute(route) {
     this.setUser(this.state.name);
     this.props.replaceAt('login', { key: route }, this.props.navigation.key);
   }
 
   render() {
-    console.log('rendering');
     return (
       <Container>
         <View style={styles.container}>
-        <StatusBar
-        backgroundColor="transparent"
-        barStyle="light-content"
-        />
+          <StatusBar
+            backgroundColor="transparent"
+            barStyle="light-content"
+          />
           <Content>
-          <View style={styles.header}>
-            <Video
-              ref={(ref) => {
-                // this.player = ref;
-              }}
-              // paused={this.state.play}
-              repeat
-              resizeMode='cover'
-              source={require('../../../images/video.mp4')}
-              style={styles.backgroundVideo}
-              // onLoad={this.onPlayerLoad.bind(this)}
-            />
-            <Image source={background} style={styles.shadow}/>
-            <Text style={{color: '#FBFAFA', marginTop: 20}}>Sales Liaison App</Text>
-          </View>
-          <View style={styles.bg}>
-            <InputGroup style={styles.input}>
-              <Icon name="ios-person" />
-              <Input placeholder="EMAIL" onChangeText={name => this.setState({ name })} />
-            </InputGroup>
-            <InputGroup style={styles.input}>
-              <Icon name="ios-unlock-outline" />
-              <Input
-                placeholder="PASSWORD"
-                secureTextEntry
+            <View style={styles.header}>
+              <Video
+                repeat
+                resizeMode="cover"
+                source={videoSrc}
+                style={styles.backgroundVideo}
               />
-            </InputGroup>
-            <Button style={styles.btn} onPress={() => this.replaceRoute('home')}>
-              Login
-            </Button>
-          </View>
+              <Image source={background} style={styles.shadow} />
+              <Text style={{ color: '#FBFAFA', marginTop: 20 }}>Sales Liaison App</Text>
+            </View>
+            <View style={styles.bg}>
+              <InputGroup style={styles.input}>
+                <Icon name="ios-person" />
+                <Input placeholder="EMAIL" onChangeText={name => this.setState({ name })} />
+              </InputGroup>
+              <InputGroup style={styles.input}>
+                <Icon name="ios-unlock-outline" />
+                <Input
+                  placeholder="PASSWORD"
+                  secureTextEntry
+                />
+              </InputGroup>
+              <Button style={styles.btn} onPress={() => this.replaceRoute('home')}>
+                Login
+              </Button>
+            </View>
           </Content>
         </View>
       </Container>
     );
-  }
-
-  onPlayerLoad() {
-    // this.player.seek(33);
-    // this.setState({play: true});
   }
 
   setUser(name) {
