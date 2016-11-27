@@ -17,8 +17,6 @@ const {
   pushRoute,
 } = actions;
 
-const squareLogo = require('../../../images/square_logo.jpg');
-
 class Summary extends Component {
 
   static propTypes = {
@@ -142,7 +140,7 @@ class Summary extends Component {
           <Title>Summary</Title>
 
           <Button transparent onPress={this.props.openDrawer}>
-            <Icon name="ios-menu" />
+            <Icon name="ios-menu" style={{ color: '#FD8224' }} />
           </Button>
         </Header>
         <Content>
