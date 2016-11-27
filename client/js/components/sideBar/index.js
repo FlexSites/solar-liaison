@@ -36,17 +36,17 @@ class SideBar extends Component {
       <Content theme={myTheme} style={styles.sidebar} >
         <List>
           <ListItem button onPress={() => this.navigateTo('home')} >
-            <Text>Home</Text>
+            <Text style={{color: '#FFF'}}>Home</Text>
           </ListItem>
           <ListItem button onPress={() => this.navigateTo('production')} >
             <Text>System Production</Text>
           </ListItem>
           <ListItem button onPress={() => this.navigateTo('blankPage')} >
-            <Text>Blank Page</Text>
+            <Text style={{color: '#FFF'}}>Blank Page</Text>
           </ListItem>
           <ListItem button onPress={() => this.props.reset(this.props.navigation.key)}>
-            <Text style={{alignSelf: 'center', marginRight: 15, color: '#FD8224'}}>Logout</Text>
-            <Icon name="ios-log-out" style={{color: '#FD8224', fontSize: 20}} />
+            <Text style={{alignSelf: 'center', marginRight: 15, color: '#FFF'}}>Logout</Text>
+            <Icon name="ios-log-out" style={{color: '#FFF', fontSize: 20}} />
           </ListItem>
         </List>
       </Content>
