@@ -12,10 +12,6 @@ const productionLoaders = require('./lib/resources/production').loaders
 app.use((req, res, next) => {
   req.user = require('./mocks/user').default
   res.locals.production = productionLoaders()
-  res.locals.profile = {
-    repID: '105425',
-    accountNumbers: [ '4399783', '4399743', '4399771' ],
-  }
   next()
 })
 
@@ -23,7 +19,6 @@ app.use('/graph', graphHTTP((req, res) => ({
   schema,
   graphiql: true,
   context: {
-    profile: res.locals.profile,
     loaders: {
       production: productionLoaders(),
     },

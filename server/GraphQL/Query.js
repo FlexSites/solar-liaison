@@ -3,6 +3,11 @@ const {
   GraphQLObjectType,
 } = require('graphql')
 
+const config = require('config')
+const nano = require('nano')(config.get('couchdb.host'))
+
+const db = nano.use('user_profiles')
+
 const Me = require('./Types/Me').default
 
 const Query = new GraphQLObjectType({
@@ -12,14 +17,18 @@ const Query = new GraphQLObjectType({
     me: {
       type: Me,
       resolve: (source, args, context, info) => {
-        const me = {
-          account: context.user,
-          // Fetch this from CouchDB
-          profile: context.profile,
-        }
+        return new Promise((resolve, reject) => {
+          db.get('a65b10bf51791addb69b478e72bc14c3', (err, body) => {
+            if (err) return reject(err)
+            const me = {
+              account: context.user,
+              profile: body.profiles,
+            }
+            context.Me = me
 
-        context.Me = me
-        return me
+            return resolve(me)
+          })
+        })
       },
     },
   }),

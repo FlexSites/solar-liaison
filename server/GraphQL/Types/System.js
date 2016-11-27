@@ -97,9 +97,11 @@ const System = new GraphQLObjectType({
 
         return productionResource[step](accountNumber, startDate)
           .then((data) => {
-            console.error('Consumption isn\'t real. This will just be 7x of production')
+            console.error('Consumption isn\'t real. This will just be up to 7x of production')
+            const multiplier = Math.random() * 7 + 1
+
             data.measurements.forEach((measurement) => {
-              measurement.value = measurement.value * 7
+              measurement.value = Math.floor(measurement.value * multiplier)
             })
             return data
           })

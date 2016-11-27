@@ -26,6 +26,6 @@ exports.default = {
     end: { type: GraphQLString },
   },
   resolve: (source, args, context, info) => {
-    return accounts.findByIds(context.profile.accountNumbers)
+    return accounts.findByIds(context.Me.profile['account-center'].accountNumbers)
   },
 }

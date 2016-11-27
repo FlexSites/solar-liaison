@@ -1,16 +1,14 @@
 
-const casual = require('casual')
-
 exports.default = {
-  id: casual.word,
-  provider: casual.word,
-  providerId: casual.url,
+  id: 'https://api.stormpath.com/v1/accounts/2UoNNnJTOhaTf4ElMsngC',
+  provider: 'stormpath',
+  providerId: 'https://api.stormpath.com/v1/accounts/2UoNNnJTOhaTf4ElMsngC',
   profile: {
-    name: casual.full_name,
-    givenName: casual.first_name,
-    familyName: casual.last_name,
-    email: casual.email,
-    badgeId: casual.integer(10000, 50000),
+    name: 'Mark Trout',
+    givenName: 'Mark',
+    familyName: 'Trout',
+    email: 'markctrout@gmail.com',
+    badgeId: null,
   },
-  groups: casual.array_of_words(7),
+  groups: [],
 }

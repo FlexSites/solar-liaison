@@ -1,5 +1,8 @@
 
 module.exports = {
+  couchdb: {
+    host: 'http://couchdb_prod.vivintsolar.com:5984',
+  },
   elasticsearch: {
     host: 'https://amigodeveloper:CkfTeVvFxUZc@esstage.vivintsolar.com',
   },
