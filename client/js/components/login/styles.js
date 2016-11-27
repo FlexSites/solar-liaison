@@ -21,9 +21,9 @@ module.exports = StyleSheet.create({
   },
   header: {
     flex: 1,
-    height: deviceHeight / 2.75,
     justifyContent: 'center',
     alignItems: 'center',
+    height: deviceHeight / 2.75,
   },
   bg: {
     paddingTop: 100,
@@ -39,6 +39,8 @@ module.exports = StyleSheet.create({
   },
   backgroundVideo: {
     position: 'absolute',
+    height: 230 * 1.2,
+    width: 500 * 1.2,
     top: 0,
     left: 0,
     bottom: 0,

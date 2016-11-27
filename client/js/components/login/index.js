@@ -1,6 +1,6 @@
 
 import React, { Component } from 'react';
-import { Image, StatusBar } from 'react-native';
+import { Image, StatusBar, Text } from 'react-native';
 import { connect } from 'react-redux';
 import { actions } from 'react-native-navigation-redux-helpers';
 import { Container, Content, InputGroup, Input, Button, Icon, View } from 'native-base';
@@ -34,9 +34,7 @@ class Login extends Component {
     };
   }
 
-  setUser(name) {
-    this.props.setUser(name);
-  }
+
 
   replaceRoute(route) {
     this.setUser(this.state.name);
@@ -44,6 +42,7 @@ class Login extends Component {
   }
 
   render() {
+    console.log('rendering');
     return (
       <Container>
         <View style={styles.container}>
@@ -52,18 +51,21 @@ class Login extends Component {
         barStyle="light-content"
         />
           <Content>
-          <Grid>
-          <Row style={styles.header}>
+          <View style={styles.header}>
             <Video
+              ref={(ref) => {
+                // this.player = ref;
+              }}
+              // paused={this.state.play}
               repeat
               resizeMode='cover'
               source={require('../../../images/video.mp4')}
               style={styles.backgroundVideo}
+              // onLoad={this.onPlayerLoad.bind(this)}
             />
             <Image source={background} style={styles.shadow}/>
-
-          </Row>
-          </Grid>
+            <Text style={{color: '#FBFAFA', marginTop: 20}}>Sales Liaison App</Text>
+          </View>
           <View style={styles.bg}>
             <InputGroup style={styles.input}>
               <Icon name="ios-person" />
@@ -84,6 +86,15 @@ class Login extends Component {
         </View>
       </Container>
     );
+  }
+
+  onPlayerLoad() {
+    // this.player.seek(33);
+    // this.setState({play: true});
+  }
+
+  setUser(name) {
+    this.props.setUser(name);
   }
 }
 
