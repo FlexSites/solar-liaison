@@ -40,13 +40,13 @@ class Home extends Component {
       <Container theme={myTheme} style={styles.container}>
         <Header>
           <Button transparent onPress={() => this.props.reset(this.props.navigation.key)}>
-            <Icon name="ios-power" />
+            <Icon name="ios-power" style={{color: '#FD8224'}} />
           </Button>
 
           <Title>{(this.props.name) ? this.props.name : 'Home'}</Title>
 
           <Button transparent onPress={this.props.openDrawer}>
-            <Icon name="ios-menu" />
+            <Icon name="ios-menu" style={{color: '#FD8224'}} />
           </Button>
         </Header>
 

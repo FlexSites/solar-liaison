@@ -17,7 +17,7 @@ module.exports = StyleSheet.create({
   shadow: {
     flex: 1,
     width: null,
-    height: null,
+    height: null
   },
   bg: {
     flex: 1,
@@ -27,6 +27,7 @@ module.exports = StyleSheet.create({
     paddingRight: 10,
     paddingBottom: 30,
     bottom: 0,
+    backgroundColor: '#FBFAFA',
   },
   input: {
     marginBottom: 20,
@@ -34,5 +35,6 @@ module.exports = StyleSheet.create({
   btn: {
     marginTop: 20,
     alignSelf: 'center',
+    backgroundColor: '#FF8200',
   },
 });

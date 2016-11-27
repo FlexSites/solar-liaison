@@ -12,7 +12,7 @@ const {
   replaceAt,
 } = actions;
 
-const background = require('../../../images/shadow.png');
+const background = require('../../../images/login6.png');
 
 class Login extends Component {
 

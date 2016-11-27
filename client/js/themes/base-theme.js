@@ -5,7 +5,7 @@ import { Platform } from 'react-native';
 export default {
 
     // Badge
-  badgeBg: '#ED1727',
+  badgeBg: '#FD8224',
   badgeColor: '#fff',
 
 
@@ -80,11 +80,11 @@ export default {
 
   // Color
   brandPrimary: '#FD8224',
-  brandInfo: '#3FBFAD',
-  brandSuccess: '#3FBFAD',
-  brandDanger: '#E64C3E',
-  brandWarning: '#f0ad4e',
-  brandSidebar: '#252932',
+  brandInfo: '#FD8224',
+  brandSuccess: '#FD8224',
+  brandDanger: '#FD8224',
+  brandWarning: '#FD8224',
+  brandSidebar: '#FD8224',
 
 
   // Font
@@ -104,18 +104,18 @@ export default {
 
   // Footer
   footerHeight: 55,
-  footerDefaultBg: (Platform.OS === 'ios') ? '#F8F8F8' : '#4179F7',
+  footerDefaultBg: (Platform.OS === 'ios') ? '#F8F8F8' : '#FD8224',
 
 
   // FooterTab
-  tabBarTextColor: (Platform.OS === 'ios') ? '#6b6b6b' : '#b3c7f9',
-  tabBarActiveTextColor: (Platform.OS === 'ios') ? '#007aff' : '#fff',
-  tabActiveBgColor: (Platform.OS === 'ios') ? '#e4f0fe' : undefined,
+  tabBarTextColor: (Platform.OS === 'ios') ? '#FD8224' : '#FD8224',
+  tabBarActiveTextColor: (Platform.OS === 'ios') ? '#FD8224' : '#fff',
+  tabActiveBgColor: (Platform.OS === 'ios') ? '#FD8224' : undefined,
 
 
   // Header
   iosToolbarBtnColor: '#007aff',
-  toolbarDefaultBg: (Platform.OS === 'ios') ? '#F8F8F8' : '#4179F7',
+  toolbarDefaultBg: (Platform.OS === 'ios') ? '#F8F8F8' : '#FD8224',
   toolbarHeight: (Platform.OS === 'ios') ? 64 : 56,
   toolbarIconSize: (Platform.OS === 'ios') ? 20 : 22,
   toolbarInputColor: '#CECDD2',
@@ -174,7 +174,7 @@ export default {
 
 
   // Progress Bar
-  defaultProgressColor: '#E4202D',
+  defaultProgressColor: '#FD8224',
   inverseProgressColor: '#1A191B',
 
 
@@ -206,7 +206,7 @@ export default {
   // Title
   titleFontSize: (Platform.OS === 'ios') ? 17 : 19,
   subTitleFontSize: (Platform.OS === 'ios') ? 12 : 14,
-  subtitleColor: '#8e8e93',
+  subtitleColor: '#FD8224',
 
 
   // Other
@@ -219,8 +219,8 @@ export default {
   },
 
   dropdownBg: '#000',
-  dropdownLinkColor: '#414142',
+  dropdownLinkColor: '#FD8224',
   inputLineHeight: 24,
-  jumbotronBg: '#C9C9CE',
+  jumbotronBg: '#FD8224',
   jumbotronPadding: 30,
 };

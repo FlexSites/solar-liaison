@@ -33,7 +33,7 @@ class App extends Component {
     this.state = {
       showDownloadingModal: false,
       showInstalling: false,
-      downloadProgress: 0,
+      downloadProgress: 0
     };
   }
 
