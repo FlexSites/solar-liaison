@@ -90,17 +90,18 @@ class Summary extends Component {
   }
 
   getUsageSummary() {
-    const text = this.props.lastDaysProduction ? `You've produced ${this.props.lastDaysProduction} ${this.props.productionUnit} today` : 'Contact Customer Serivce, your system isn\'t reporting';
+    const status = this.props.lastDaysProduction ? <Text>System <Text style={{ color: 'green', fontSize: 18, fontWeight: 'bold' }}>Reporting</Text></Text> : <Text>System <Text style={{ color: 'red', fontSize: 18, fontWeight: 'bold' }}>NOT Reporting</Text></Text>;
+    const text = this.props.lastDaysProduction ? `You've produced ${this.props.lastDaysProduction} ${this.props.productionUnit} today` : 'Please Contact Customer Serivce';
     return (
       <View>
         <ListItem itemDivider>
           <Text>
-            Production
+            Production Summary
           </Text>
         </ListItem>
         <ListItem>
           <Text>
-            {text}
+            {status}{'\n'}{'\n'}{text}
           </Text>
         </ListItem>
       </View>
@@ -161,7 +162,7 @@ class Summary extends Component {
             {summaryList}
             <ListItem itemDivider>
               <Text>
-                Contact:
+                Contact
               </Text>
             </ListItem>
             <ListItem>
@@ -177,7 +178,7 @@ class Summary extends Component {
           </List>
           <Button transparent onPress={() => this.switchView()} >
             <Text>
-              {/*Temporary hidden button to swap between views*/}
+              {/* Temporary hidden button to swap between views */}
             </Text>
           </Button>
         </Content>
