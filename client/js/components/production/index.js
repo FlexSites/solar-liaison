@@ -7,6 +7,10 @@ import { actions } from 'react-native-navigation-redux-helpers';
 import { Container, Header, Title, Content, Button, Icon } from 'native-base';
 // import { Pie } from 'react-native-pathjs-charts'
 
+import { Dimensions } from 'react-native'
+
+var {height, width} = Dimensions.get('window');
+
 import { openDrawer } from '../../actions/drawer';
 import styles from './styles';
 import Pie from '../Pie'
@@ -16,45 +20,43 @@ const {
 } = actions;
 
 const sample = {
-    production: [{
-        "name": "Today",
-        "population": 95
-    }, {
-        "name": "Average",
-        "population": 22,
-        "color": "#FFFFFF"
-    }],
-    consumption: [{
-        "name": "Today",
-        "population": 50
-    }, {
-        "name": "Average",
-        "population": 22,
-        "color": "#FFFFFF"
-    }],
-    options: {
-        margin: {
-            top: 5,
-            left: 5,
-            right: 5,
-            bottom: 5
-        },
-        color: '#FD8224',
-        r: 100,
-        R: 135,
-        legendPosition: 'topLeft',
-        animate: {
-            type: 'oneByOne',
-            duration: 200,
-            fillTransition: 3
-        },
-        label: {
-            fontFamily: 'Arial',
-            fontSize: 14,
-            fontWeight: true,
-            color: '#ECF0F1'
-        }
+  production: [{
+    name: 'Today',
+    kW: 5
+  }, {
+    name: 'Average',
+    kW: 2,
+  }],
+  consumption: [{
+    name: 'Today',
+    kW: 7
+  }, {
+    name: 'Average',
+    kW: 1,
+  }],
+  options: {
+    margin: {
+      top: 0,
+      left: 0,
+      right: 0,
+      bottom: 0
+    },
+    color: '#FD8224',
+    r: width / 4,
+    R: width / 3,
+    legendPosition: 'topLeft',
+    animate: {
+      type: 'oneByOne',
+      duration: 200,
+      fillTransition: 3
+    },
+    label: {
+      fontFamily: 'Arial',
+      fontSize: 14,
+      fontWeight: true,
+      color: '#ECF0F1'
     }
+  }
 }
 
 class BlankPage extends Component {
@@ -84,22 +86,25 @@ class BlankPage extends Component {
             <Icon name="ios-arrow-back" />
           </Button>
 
-          <Title>{(name) ? this.props.name : 'Blank Page'}</Title>
+          <Title>{(name) ? this.props.name : 'Production'}</Title>
 
           <Button transparent onPress={this.props.openDrawer}>
             <Icon name="ios-menu" />
           </Button>
         </Header>
 
-        <Content padder>
+        <Content style={{ padding: 20 }}>
           <Pie
             percentage={sample.percentage}
             production={sample.production}
             consumption={sample.consumption}
             options={sample.options}
-            accessorKey="population"
+            accessorKey="kW"
+            width={300}
+            height={300}
+            style={{ alignSelf: 'center' }}
           />
-          <ReactText style={{ textAlign: 'center', fontSize: 20 }}>Production</ReactText>
+          <ReactText style={{ textAlign: 'center', marginTop: 15, fontWeight: '500', fontSize: 18 }}>Production</ReactText>
         </Content>
       </Container>
     );

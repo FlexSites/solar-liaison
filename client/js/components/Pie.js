@@ -12,112 +12,83 @@ See the License for the specific language governing permissions and limitations 
 
 import React, {Component} from 'react'
 import {Text as ReactText}  from 'react-native'
-import Svg,{ G, Path, Text} from 'react-native-svg'
-import { Colors, Options, cyclic, identity, fontAdapt } from 'react-native-pathjs-charts/src/util'
-import _ from 'lodash'
+import Svg,{ G, Rect, Path, Text} from 'react-native-svg'
+import { identity } from 'react-native-pathjs-charts/src/util'
 const Pie = require('paths-js/pie')
+import { Dimensions } from 'react-native'
+
+const dim = 320
+
+var {height, width} = Dimensions.get('window');
 
 export default class PieChart extends Component {
-
-  static defaultProps = {
-    options: {
-      margin: {top: 20, left: 20, right: 20, bottom: 20},
-      width: 600,
-      height: 600,
-      color: '#2980B9',
-      r: 100,
-      R: 200,
-      legendPosition: 'topLeft',
-      animate: {
-        type: 'oneByOne',
-        duration: 200,
-        fillTransition: 3
-      },
-      label: {
-        fontFamily: 'Arial',
-        fontSize: 14,
-        bold: true,
-        color: '#ECF0F1'
-      }
-    }
-  }
-
-  color(i) {
-    let color = this.props.options.color
-    if (color && !_.isString(color)) color = color.color
-    let pallete = this.props.pallete || Colors.mix(color || '#9ac7f7')
-    return Colors.string(cyclic(pallete, i)) }
-
-
-  get defaultRange() {
-    return _.map(Array(this.props.data && this.props.data.length),function(){return 0})
-  }
-
   render() {
     const noDataMsg = this.props.noDataMessage || 'No data available'
     if (this.props.production === undefined) return (<ReactText>{noDataMsg}</ReactText>)
 
-    let options = new Options(this.props)
+    const radius = dim / 2
 
-    let x = options.chartWidth / 2
-    let y = options.chartHeight / 2
-
-    let radius = Math.min(x, y)
-
-    let production = Pie({
-      center: this.props.options.center || [0,0],
-      r: this.props.options.r || radius /2,
-      R: this.props.options.R || radius,
+    const production = Pie({
+      center: [0,0],
+      r: 120,
+      R: radius,
       data: this.props.production,
       accessor: this.props.accessor || identity(this.props.accessorKey)
     })
 
-    let consumption = Pie({
-      center: this.props.options.center || [0,0],
+    const consumption = Pie({
+      center: [0,0],
       r: 75,
-      R: 100,
+      R: 115,
       data: this.props.consumption,
       accessor: this.props.accessor || identity(this.props.accessorKey)
     })
 
-    let textStyle = fontAdapt(options.label)
+    const currentConsumption = this.props.consumption.filter((c => c.name === 'Today'))[0]
+    const currentProduction = this.props.production.filter((c => c.name === 'Today'))[0]
 
-    let slices = [
+    const slices = [
       (
-          <G key={0} x={x - options.margin.left} y={y - options.margin.top}>
-              <Path d={consumption.curves[0].sector.path.print()} fill={'#25C7CF'} fillOpacity={1}  />
-          </G>
+        <G key={0} x={radius} y={radius}>
+          <Path d={consumption.curves[0].sector.path.print()} fill={'#25C7CF'} fillOpacity={1}  />
+        </G>
       ),
       (
-          <G key={1} x={x - options.margin.left} y={y - options.margin.top}>
-              <Path d={consumption.curves[1].sector.path.print()} fill={'#efefef'} fillOpacity={1}  />
-          </G>
+        <G key={1} x={radius} y={radius}>
+          <Path d={consumption.curves[1].sector.path.print()} fill={'#efefef'} fillOpacity={1}  />
+        </G>
       )
     ]
-    let productionSlices = [
+    const productionSlices = [
       (
-          <G key={0} x={x - options.margin.left} y={y - options.margin.top}>
-              <Path d={production.curves[0].sector.path.print()} fill={'#FD8224'} fillOpacity={1}  />
-          </G>
+        <G key={0} x={radius} y={radius}>
+          <Path d={production.curves[0].sector.path.print()} fill={'#FD8224'} fillOpacity={1}  />
+        </G>
       ),
       (
-          <G key={1} x={x - options.margin.left} y={y - options.margin.top}>
-              <Path d={production.curves[1].sector.path.print()} fill={'#efefef'} fillOpacity={1}  />
-          </G>
+        <G key={1} x={radius} y={radius}>
+          <Path d={production.curves[1].sector.path.print()} fill={'#efefef'} fillOpacity={1}  />
+        </G>
       ),
     ]
 
+    const barWidth = dim / 4
+    const barHeight = 5
 
-    let returnValue = <Svg width={options.width} height={options.height}>
-            <G x={options.margin.left} y={options.margin.top}>
-                { productionSlices }
-            </G>
-            <G x={options.margin.left} y={options.margin.top}>
-                { slices }
-            </G>
-            <Text x={130} y={160} fontSize={72} fontWeight={'500'}>7kW</Text>
-          </Svg>
-
-    return returnValue
+    return (
+      <Svg style={this.props.style} width={this.props.width} height={this.props.height} viewBox={`0 0 ${dim} ${dim}`}>
+        <G x={0} y={0}>
+          { productionSlices }
+        </G>
+        <G x={0} y={0}>
+          { slices }
+        </G>
+        <G x={radius} y={radius}>
+          <Text y={-36} fill={'#FD8224'} textAnchor="middle" fontSize={(this.props.width / 10) - 2} fontWeight={'500'}>{`${currentProduction.kW}kW`}</Text>
+          <Rect x={-(dim / 8)} y={0} fill={'#cccccc'} width={barWidth} height={barHeight} />
+          <Text y={barHeight} fill={'#25C7CF'} textAnchor="middle" fontSize={(this.props.width / 10) - 2} fontWeight={'500'}>{`${currentConsumption.kW}kW`}</Text>
+        </G>
+      </Svg>
+    );
   }
 }
