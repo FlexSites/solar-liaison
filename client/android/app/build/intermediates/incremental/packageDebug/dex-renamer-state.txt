@@ -1,0 +1,4 @@
+#Sat Nov 26 20:48:53 MST 2016
+base.0=/www/vivint/liaison/client/android/app/build/intermediates/transforms/dex/debug/folders/1000/1f/main
+renamed.0=classes.dex
+file.0=/www/vivint/liaison/client/android/app/build/intermediates/transforms/dex/debug/folders/1000/1f/main/classes.dex

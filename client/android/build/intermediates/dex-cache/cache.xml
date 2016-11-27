@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="false"
+        jar="/www/vivint/liaison/client/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="d86429b0f0b3f3cafbeb78dda1b9d89119ccb05d">
+        <dex dex="/www/vivint/liaison/client/android/app/build/intermediates/pre-dexed/debug/com.android.support-appcompat-v7-23.0.1_63c7b67d50598bee55788cefd33bb62beb115156.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/www/vivint/liaison/client/android/app/build/intermediates/exploded-aar/com.facebook.fresco/imagepipeline-okhttp3/0.11.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="2b8a01ad9da5d26d0067894c22e87597bca2c500">
+        <dex dex="/www/vivint/liaison/client/android/app/build/intermediates/pre-dexed/debug/com.facebook.fresco-imagepipeline-okhttp3-0.11.0_5d2f5812bc59f12db726e6007c981a80643d5990.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/sethtippetts/.m2/repository/javax/inject/javax.inject/1/javax.inject-1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="6975da39a7040257bd51d21a231b76c915872d38">
+        <dex dex="/www/vivint/liaison/client/android/app/build/intermediates/pre-dexed/debug/javax.inject-1_6d3146fdd6d97b30563ad5eafcb5a4848f263dbc.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/www/vivint/liaison/client/android/app/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/23.0.1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="4356e230a981d1bbf047d848b91bc0d9b7c5bacc">
+        <dex dex="/www/vivint/liaison/client/android/app/build/intermediates/pre-dexed/debug/com.android.support-recyclerview-v7-23.0.1_36496feb3a27e7229b67af3ddb1995a2cd295193.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/sethtippetts/.gradle/caches/modules-2/files-2.1/com.squareup.okio/okio/1.9.0/f824591a0016efbaeddb8300bee54832a1398cfa/okio-1.9.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="f824591a0016efbaeddb8300bee54832a1398cfa">
+        <dex dex="/www/vivint/liaison/client/android/app/build/intermediates/pre-dexed/debug/okio-1.9.0_32687d5b068558cf9df0ba16b6922799310acb30.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/www/vivint/liaison/client/android/app/build/intermediates/exploded-aar/com.facebook.react/react-native/0.35.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="cdc91752c90040ec7871c44963c63c751b1fa94b">
+        <dex dex="/www/vivint/liaison/client/android/app/build/intermediates/pre-dexed/debug/com.facebook.react-react-native-0.35.0_a86d58514b9314ce29d19cc40e25d848b4e632b0.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/sethtippetts/.gradle/caches/modules-2/files-2.1/com.squareup.okhttp3/okhttp/3.4.1/c7c4f9e35c2fd5900da24f9872e3971801f08ce0/okhttp-3.4.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="c7c4f9e35c2fd5900da24f9872e3971801f08ce0">
+        <dex dex="/www/vivint/liaison/client/android/app/build/intermediates/pre-dexed/debug/okhttp-3.4.1_5a66b3d525a5ffeb1b6dff2e7b00f29d9044e2db.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/sethtippetts/.gradle/caches/modules-2/files-2.1/com.squareup.okhttp3/okhttp-urlconnection/3.4.1/63994437f62bc861bc20c605d12962f7246116d1/okhttp-urlconnection-3.4.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="63994437f62bc861bc20c605d12962f7246116d1">
+        <dex dex="/www/vivint/liaison/client/android/app/build/intermediates/pre-dexed/debug/okhttp-urlconnection-3.4.1_3877e085504d4262ddbb93514081a1a49cf558b8.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/www/vivint/liaison/client/android/app/build/intermediates/exploded-aar/com.facebook.fresco/imagepipeline-base/0.11.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="ca63c521b5745ae9a09629d7ca67ff6bc2a967fe">
+        <dex dex="/www/vivint/liaison/client/android/app/build/intermediates/pre-dexed/debug/com.facebook.fresco-imagepipeline-base-0.11.0_f040000ad56d08ab1e879407321d253daaedf301.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/sethtippetts/.gradle/caches/modules-2/files-2.1/com.nineoldandroids/library/2.4.0/e9b63380f3a242dbdbf103a2355ad7e43bad17cb/library-2.4.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="e9b63380f3a242dbdbf103a2355ad7e43bad17cb">
+        <dex dex="/www/vivint/liaison/client/android/app/build/intermediates/pre-dexed/debug/library-2.4.0_73dc68a2d49e9ecda83080e4688d6eb0a752a059.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/sethtippetts/Library/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/23.2.1/support-annotations-23.2.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="ccb693bc0774fcb637246f7360de25b4af7df318">
+        <dex dex="/www/vivint/liaison/client/android/app/build/intermediates/pre-dexed/debug/support-annotations-23.2.1_b5bd57e71eeb0dfdec82806d9abd3c0974617b65.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/www/vivint/liaison/client/android/app/build/intermediates/exploded-aar/NativeStarterKit/react-native-vector-icons/unspecified/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="b319ff9834bbeb9be394687614eb86892699ea14">
+        <dex dex="/www/vivint/liaison/client/android/app/build/intermediates/pre-dexed/debug/NativeStarterKit-react-native-vector-icons-unspecified_391bc07a950c073c02f2b0c2cc1012abb3c5991c.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/www/vivint/liaison/client/android/app/build/intermediates/exploded-aar/com.facebook.fresco/imagepipeline/0.11.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="3341b66c54367e777a0647e2db96c045329bfeab">
+        <dex dex="/www/vivint/liaison/client/android/app/build/intermediates/pre-dexed/debug/com.facebook.fresco-imagepipeline-0.11.0_c1b1ff373f75dfefbea36be89764710912ee4878.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/sethtippetts/.gradle/caches/modules-2/files-2.1/com.google.code.findbugs/jsr305/3.0.0/5871fb60dc68d67da54a663c3fd636a10a532948/jsr305-3.0.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="5871fb60dc68d67da54a663c3fd636a10a532948">
+        <dex dex="/www/vivint/liaison/client/android/app/build/intermediates/pre-dexed/debug/jsr305-3.0.0_7803c7db9b5dea5097bc4e1b270d105c0fbbe4c7.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/sethtippetts/.gradle/caches/modules-2/files-2.1/com.squareup.okhttp3/okhttp-ws/3.4.1/8ace66ef7002d98f633377c9e67daeeb196d8c3b/okhttp-ws-3.4.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="8ace66ef7002d98f633377c9e67daeeb196d8c3b">
+        <dex dex="/www/vivint/liaison/client/android/app/build/intermediates/pre-dexed/debug/okhttp-ws-3.4.1_46e3c183a1e314e2b927d29e0096b932db069ded.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/www/vivint/liaison/client/android/app/build/intermediates/exploded-aar/NativeStarterKit/react-native-code-push/unspecified/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="88f4c09e8dc3db495b7c956037deb28d044535a8">
+        <dex dex="/www/vivint/liaison/client/android/app/build/intermediates/pre-dexed/debug/NativeStarterKit-react-native-code-push-unspecified_ee6cd022114f3225f412914db3e12b2109884726.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/www/vivint/liaison/client/android/app/build/intermediates/exploded-aar/com.facebook.fresco/fbcore/0.11.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="98786c1770b531b9194fb6448b2a2692c64074b6">
+        <dex dex="/www/vivint/liaison/client/android/app/build/intermediates/pre-dexed/debug/com.facebook.fresco-fbcore-0.11.0_164a50fed6f589379f5b8c4146333a1b405215c2.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/www/vivint/liaison/client/android/app/build/intermediates/exploded-aar/com.facebook.fresco/fresco/0.11.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="d31aadf33187c37a7cd63dc1b769f8c6e33f78c3">
+        <dex dex="/www/vivint/liaison/client/android/app/build/intermediates/pre-dexed/debug/com.facebook.fresco-fresco-0.11.0_f0426ac6a303b19b1bfaa8aabb464a4b8ec2f3e8.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/www/vivint/liaison/client/android/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.2.1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="3be474b1b21b31cf2fa93fe6bd641ae108d96452">
+        <dex dex="/www/vivint/liaison/client/android/app/build/intermediates/pre-dexed/debug/com.android.support-support-v4-23.2.1_bfae7d4992ebb5e2c54549476a86dcee5879a0dc.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/www/vivint/liaison/client/android/app/build/intermediates/exploded-aar/com.facebook.react/react-native/0.35.0/jars/libs/infer-annotations-1.5.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="db2c76df02d034e8d49bca2a69af788a787b46b2">
+        <dex dex="/www/vivint/liaison/client/android/app/build/intermediates/pre-dexed/debug/infer-annotations-1.5_b65045f4f84f81daef3ffed49ab4250b1c1d86a3.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/www/vivint/liaison/client/android/app/build/intermediates/exploded-aar/com.facebook.fresco/drawee/0.11.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="1137942adeb03984c1311b662363dd38fc238fd3">
+        <dex dex="/www/vivint/liaison/client/android/app/build/intermediates/pre-dexed/debug/com.facebook.fresco-drawee-0.11.0_a2bfefcf788754082ac753373c0e13606dd4b9bc.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/sethtippetts/.gradle/caches/modules-2/files-2.1/com.fasterxml.jackson.core/jackson-core/2.2.3/1a0113da2cab5f4c216b4e5e7c1dbfaa67087e14/jackson-core-2.2.3.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="1a0113da2cab5f4c216b4e5e7c1dbfaa67087e14">
+        <dex dex="/www/vivint/liaison/client/android/app/build/intermediates/pre-dexed/debug/jackson-core-2.2.3_b700004ead27a780c6ed19f06c77f5940b295b20.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/www/vivint/liaison/client/android/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.2.1/jars/libs/internal_impl-23.2.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="607a3d0b8013b4ccbfeb0b7cb293351994e021fb">
+        <dex dex="/www/vivint/liaison/client/android/app/build/intermediates/pre-dexed/debug/internal_impl-23.2.1_f923bb726ba6255109381ee0c15ddcbaf73a1657.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/www/vivint/liaison/client/android/app/build/intermediates/exploded-aar/com.facebook.soloader/soloader/0.1.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="8f615bca00639150c9eb6175d4b5471193f70794">
+        <dex dex="/www/vivint/liaison/client/android/app/build/intermediates/pre-dexed/debug/com.facebook.soloader-soloader-0.1.0_c0851a9c66395c4f828ec3c96e8ebd23f5b2f53e.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/sethtippetts/.gradle/caches/modules-2/files-2.1/com.parse.bolts/bolts-tasks/1.4.0/d85884acf6810a3bbbecb587f239005cbc846dc4/bolts-tasks-1.4.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="d85884acf6810a3bbbecb587f239005cbc846dc4">
+        <dex dex="/www/vivint/liaison/client/android/app/build/intermediates/pre-dexed/debug/bolts-tasks-1.4.0_1c052d693a82802eb7262a6a2bfac4b09e54a580.jar" />
+    </item>
+
+</items>
