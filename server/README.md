@@ -9,6 +9,19 @@
     }
 
     systems {
+      weather(days: 5) {
+        temperature(unit:"k") {
+          unit
+          value
+        }
+        cloudCover
+        day
+        date
+        uvIndex
+        visibility
+        weatherIcon
+        weatherText
+      }
       salesRep {
         name
         phone
@@ -22,6 +35,7 @@
         street
         street2
         state
+        city
         zip
       }
 
