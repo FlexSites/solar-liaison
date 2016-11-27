@@ -39,9 +39,7 @@ class Home extends Component {
     return (
       <Container theme={myTheme} style={styles.container}>
         <Header>
-          <Button transparent onPress={() => this.props.reset(this.props.navigation.key)}>
-            <Icon name="ios-power" style={{color: '#FD8224'}} />
-          </Button>
+          
 
           <Title>{(this.props.name) ? this.props.name : 'Home'}</Title>
 

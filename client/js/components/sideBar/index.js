@@ -6,6 +6,7 @@ import { Content, Text, List, ListItem } from 'native-base';
 import { setIndex } from '../../actions/list';
 import navigateTo from '../../actions/sideBarNav';
 import myTheme from '../../themes/base-theme';
+import { Icon, InputGroup, Input } from 'native-base';
 
 import styles from './style';
 
@@ -29,6 +30,11 @@ class SideBar extends Component {
           </ListItem>
           <ListItem button onPress={() => this.navigateTo('blankPage')} >
             <Text>Blank Page</Text>
+          </ListItem>
+          <ListItem button onPress={() => this.props.reset(this.props.navigation.key)}>
+            
+            <Text style={{alignSelf: 'center', marginRight: 15, color: '#FD8224'}}>Logout</Text>
+            <Icon name="ios-log-out" style={{color: '#FD8224', fontSize: 20}} />
           </ListItem>
         </List>
       </Content>
