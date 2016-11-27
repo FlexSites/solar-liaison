@@ -12,4 +12,8 @@ module.exports = {
   fusion: {
     host: 'http://fusion.vivintsolar.com',
   },
+  weather: {
+    host: 'http://dataservice.accuweather.com',
+    apiKey: 'oxGjGUzwFXOk6ErwtUecyQ2q9Mcy2mkY',
+  },
 }

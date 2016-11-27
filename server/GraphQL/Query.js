@@ -20,6 +20,10 @@ const Query = new GraphQLObjectType({
         return new Promise((resolve, reject) => {
           db.get('a65b10bf51791addb69b478e72bc14c3', (err, body) => {
             if (err) return reject(err)
+            const profile = body.profiles
+            profile.liason = {
+              locationKey: 2197569,
+            }
             const me = {
               account: context.user,
               profile: body.profiles,
