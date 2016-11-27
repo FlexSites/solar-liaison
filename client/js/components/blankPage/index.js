@@ -35,13 +35,13 @@ class BlankPage extends Component {
       <Container style={styles.container}>
         <Header>
           <Button transparent onPress={() => this.popRoute()}>
-            <Icon name="ios-arrow-back" />
+            <Icon name="ios-arrow-back" style={{color: '#FD8224'}} />
           </Button>
 
           <Title>{(name) ? this.props.name : 'Blank Page'}</Title>
 
           <Button transparent onPress={this.props.openDrawer}>
-            <Icon name="ios-menu" />
+            <Icon name="ios-menu" style={{color: '#FD8224'}} />
           </Button>
         </Header>
 

@@ -2,19 +2,29 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Content, Text, List, ListItem } from 'native-base';
-
+import { actions } from 'react-native-navigation-redux-helpers';
 import { setIndex } from '../../actions/list';
 import navigateTo from '../../actions/sideBarNav';
 import myTheme from '../../themes/base-theme';
 import { Icon, InputGroup, Input } from 'native-base';
+import { closeDrawer } from '../../actions/drawer';
 
 import styles from './style';
+
+const {
+  reset,
+} = actions;
 
 class SideBar extends Component {
 
   static propTypes = {
     // setIndex: React.PropTypes.func,
     navigateTo: React.PropTypes.func,
+    reset: React.PropTypes.func,
+    navigation: React.PropTypes.shape({
+      key: React.PropTypes.string,
+    }),
+    closeDrawer: React.PropTypes.func,
   }
 
   navigateTo(route) {
@@ -46,6 +56,7 @@ function bindAction(dispatch) {
   return {
     setIndex: index => dispatch(setIndex(index)),
     navigateTo: (route, homeRoute) => dispatch(navigateTo(route, homeRoute)),
+    reset: key => dispatch(reset([{ key: 'login' }], key, 0)) && dispatch(closeDrawer()),
   };
 }
 
