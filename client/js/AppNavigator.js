@@ -14,6 +14,7 @@ import SplashPage from './components/splashscreen/';
 import Production from './components/production/';
 import SideBar from './components/sideBar';
 import { statusBarColor } from './themes/base-theme';
+import Summary from './components/summary/';
 
 const {
   popRoute,
@@ -79,7 +80,7 @@ class AppNavigator extends Component {
       case 'login':
         return <Login />;
       case 'home':
-        return <Home />;
+        return <Summary />;
       case 'blankPage':
         return <BlankPage />;
       case 'production':
