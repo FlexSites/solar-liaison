@@ -114,7 +114,7 @@ class Summary extends Component {
   }
 
   openEmail() {
-    const contactEmail = this.state.ptoed ? 'customer.service@vivintsolar.com' : this.props.repEmail;
+    const contactEmail = this.state.ptoed ? 'help@vivintsolar.com' : this.props.repEmail;
     email([contactEmail], null, null, null, null);
   }
 
@@ -154,7 +154,7 @@ class Summary extends Component {
           <Title>Summary</Title>
 
           <Button transparent onPress={this.props.openDrawer}>
-            <Icon name="ios-menu" style={{ color: '#FD8224' }} />
+            <Icon name="ios-menu" style={styles.menu} />
           </Button>
         </Header>
         <Content>

@@ -119,13 +119,13 @@ class ProductionPage extends Component {
       <Container style={styles.container}>
         <Header>
           <Button transparent onPress={() => this.popRoute()}>
-            <Icon name="ios-arrow-back" />
+            <Icon name="ios-arrow-back" style={styles.menu} />
           </Button>
 
           <Title>{(name) ? this.props.name : 'Production'}</Title>
 
           <Button transparent onPress={this.props.openDrawer}>
-            <Icon name="ios-menu" />
+            <Icon name="ios-menu" style={styles.menu} />
           </Button>
         </Header>
 
