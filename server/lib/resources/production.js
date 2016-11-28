@@ -48,7 +48,7 @@ exports.daily = (accountNumber, startDate, endDate) => {
       const measurements = data.production.reverse().map((value, idx) => {
         const date = moment(data.cached).subtract(idx, 'days').utc().format()
         return {
-          unit: 'kW',
+          unit: 'W',
           value,
           created: date,
         }
