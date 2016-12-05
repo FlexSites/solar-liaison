@@ -30,12 +30,18 @@ module.exports = StyleSheet.create({
   },
   input: {
     marginBottom: 20,
-    width: deviceWidth
+    width: deviceWidth,
   },
   btn: {
     marginTop: 20,
     alignSelf: 'center',
-    backgroundColor: '#FF8200',
+    backgroundColor: '#33c0ae',
+    width: deviceWidth,
+    height: 60,
+    borderRadius: 0,
+  },
+  btnText: {
+    fontWeight: 'bold',
   },
   backgroundVideo: {
     position: 'absolute',

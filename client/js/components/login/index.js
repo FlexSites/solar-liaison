@@ -15,7 +15,7 @@ const {
 
 const videoSrc = require('../../../images/video.mp4');
 
-const background = require('../../../images/login1.png');
+const background = require('../../../images/logo_white.png');
 
 class Login extends Component {
 
@@ -70,7 +70,7 @@ class Login extends Component {
                   secureTextEntry
                 />
               </InputGroup>
-              <Button style={styles.btn} onPress={() => this.replaceRoute('home')}>
+              <Button block style={styles.btn} textStyle={styles.btnText} onPress={() => this.replaceRoute('home')}>
                 Login
               </Button>
             </View>

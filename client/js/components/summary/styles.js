@@ -1,5 +1,3 @@
-import { Platform } from 'react-native';
-
 const React = require('react-native');
 
 const { StyleSheet } = React;
@@ -20,7 +18,7 @@ module.exports = StyleSheet.create({
   mt: {
     marginTop: 18,
   },
-  menu: {
-    color: (Platform.OS === 'ios') ? '#FD8224' : '#fff',
+  white: {
+    color: '#fff',
   },
 });

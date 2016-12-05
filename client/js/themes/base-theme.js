@@ -115,12 +115,12 @@ export default {
 
   // Header
   iosToolbarBtnColor: '#007aff',
-  toolbarDefaultBg: (Platform.OS === 'ios') ? '#F8F8F8' : '#FD8224',
+  toolbarDefaultBg: '#33c0ae',
   toolbarHeight: (Platform.OS === 'ios') ? 64 : 56,
   toolbarIconSize: (Platform.OS === 'ios') ? 20 : 22,
   toolbarInputColor: '#CECDD2',
   toolbarInverseBg: '#222',
-  toolbarTextColor: (Platform.OS === 'ios') ? '#000' : '#fff',
+  toolbarTextColor: '#fff',
   get statusBarColor() {
     return color(this.toolbarDefaultBg).darken(0.2).hexString();
   },
@@ -166,7 +166,7 @@ export default {
   // List
   listBorderColor: '#ACAAAB',
   // listBorderColor: '#ddd',
-  listDividerBg: '#ddd',
+  listDividerBg: '#6d6e71',
   listItemHeight: 45,
   listItemPadding: 9,
   listNoteColor: '#808080',
@@ -199,7 +199,7 @@ export default {
 
 
   // Text
-  textColor: '#000',
+  textColor: '#666',
   inverseTextColor: '#fff',
 
 

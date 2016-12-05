@@ -116,7 +116,7 @@ class ProductionPage extends Component {
     const { props: { name, index, list } } = this;
 
     return (
-      <Container style={styles.container}>
+      <Container theme={myTheme} style={styles.container}>
         <Header>
           <Button transparent onPress={() => this.popRoute()}>
             <Icon name="ios-arrow-back" style={styles.menu} />

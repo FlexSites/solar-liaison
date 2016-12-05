@@ -3,8 +3,8 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { View } from 'react-native';
 import { actions } from 'react-native-navigation-redux-helpers';
-import { Container, Header, Title, Content, Text, Button, Icon, CheckBox, List, ListItem, Thumbnail } from 'native-base';
-import { phoneCall, email } from 'react-native-communications';
+import { Container, Header, Title, Content, Text, Button, Icon, List, ListItem, Thumbnail } from 'native-base';
+import { phonecall, email } from 'react-native-communications';
 
 import { openDrawer } from '../../actions/drawer';
 import { setIndex } from '../../actions/list';
@@ -49,38 +49,41 @@ class Summary extends Component {
     return (
       <View>
         <ListItem itemDivider>
-          <Text>
+          <Text style={styles.white}>
             {this.props.name}'s To-Do List
           </Text>
         </ListItem>
-        <ListItem>
-          <CheckBox checked disabled />
+        <ListItem iconLeft>
+          <Icon name="ios-checkbox-outline" />
           <Text>
              Schedule Site Survey
           </Text>
         </ListItem>
-        <ListItem>
-          <CheckBox checked={false} disabled />
+        <ListItem iconLeft>
+          <Icon name="ios-square-outline" />
           <Text>
             Make sure you or someone over 18 is home
           </Text>
         </ListItem>
         <ListItem itemDivider>
-          <Text>
+          <Text style={styles.white}>
             Our To-Do List
           </Text>
         </ListItem>
-        <ListItem >
+        <ListItem iconLeft>
+          <Icon name="ios-square-outline" />
           <Text>
              Perform Site Survey
           </Text>
         </ListItem>
-        <ListItem>
+        <ListItem iconLeft>
+          <Icon name="ios-square-outline" />
           <Text>
             Verify that your home is a good fit
           </Text>
         </ListItem>
-        <ListItem>
+        <ListItem iconLeft>
+          <Icon name="ios-square-outline" />
           <Text>
             Send information to design team
           </Text>
@@ -95,7 +98,7 @@ class Summary extends Component {
     return (
       <View>
         <ListItem itemDivider>
-          <Text>
+          <Text style={styles.white}>
             Production Summary
           </Text>
         </ListItem>
@@ -110,7 +113,7 @@ class Summary extends Component {
 
   openPhone() {
     const number = this.state.ptoed ? '1-877-404-4129' : this.props.repNumber;
-    phoneCall(number, true);
+    phonecall(number, true);
   }
 
   openEmail() {
@@ -131,16 +134,17 @@ class Summary extends Component {
 
   render() {
     const name = this.state.ptoed ? 'Customer Service' : this.props.repName;
-    const firstName = this.state.ptoed ? 'Customer Service' : this.props.repName.split(' ')[0];
     const number = this.state.ptoed ? '1-877-404-4129' : this.props.repNumber;
     const imageURI = this.state.ptoed ? 'https://scontent.cdninstagram.com/t51.2885-19/s320x320/13721137_582908658580658_976291962_a.jpg' : 'https://stanlemmens.nl/wp/wp-content/uploads/2014/07/bill-gates-wealthiest-person.jpg'; //`https://46nsgon4l7.execute-api.us-west-2.amazonaws.com/prod/tms/workday-photo/${this.props.repId}`;
     const buttons = (
       <View>
-        <Button style={{ marginBottom: 5 }} onPress={() => this.openPhone()}>
-          <Text style={{ color: '#fff' }}>Call {firstName}</Text>
+        <Button transparent style={{ marginBottom: 5, width: 80, display: 'inline-block' }} onPress={() => this.openPhone()}>
+          <Icon name="md-call" style={{ fontSize: 32 }} />
+          <Text style={styles.white}>Call</Text>
         </Button>
-        <Button style={{ marginBottom: 5 }} onPress={() => this.openEmail()}>
-          <Text style={{ color: '#fff' }}>Send {firstName} an email</Text>
+        <Button transparent style={{ marginBottom: 5, width: 80, display: 'inline-block' }} onPress={() => this.openEmail()}>
+          <Icon name="md-mail" style={{ fontSize: 32 }} />
+          <Text style={styles.white}>    Email</Text>
         </Button>
       </View>
     );
@@ -154,24 +158,22 @@ class Summary extends Component {
           <Title>Summary</Title>
 
           <Button transparent onPress={this.props.openDrawer}>
-            <Icon name="ios-menu" style={styles.menu} />
+            <Icon name="ios-menu" style={styles.white} />
           </Button>
         </Header>
         <Content>
           <List>
             {summaryList}
-            <ListItem itemDivider>
-              <Text>
-                Contact
-              </Text>
-            </ListItem>
             <ListItem>
               <Thumbnail
                 size={80}
                 source={{ uri: imageURI }}
               />
-              <Text>
-                {name}{'\n'}{number}{'\n'}
+              <Text style={{ fontSize: 18, fontWeight: 'bold', paddingTop: 10, paddingBottom: 10 }}>
+                Contact
+              </Text>
+              <Text >
+                {name}{'\n'}<Text style={{ color: '#33c0ae', fontWeight: 'bold' }}>{number}{'\n'}</Text>
               </Text>
               {buttons}
             </ListItem>

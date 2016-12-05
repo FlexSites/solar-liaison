@@ -1,5 +1,3 @@
-import { Platform } from 'react-native';
-
 const React = require('react-native');
 
 const { StyleSheet } = React;
@@ -9,6 +7,6 @@ module.exports = StyleSheet.create({
     backgroundColor: '#FBFAFA',
   },
   menu: {
-    color: (Platform.OS === 'ios') ? '#FD8224' : '#fff',
+    color: '#fff',
   },
 });
